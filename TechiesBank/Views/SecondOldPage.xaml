@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TechiesBank.Views.SecondOldPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:techiesBank="clr-namespace:TechiesBank;assembly=TechiesBank"
+    Title="Titulo"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    Background="White"
+    NavigationPage.HasBackButton="True"
+    NavigationPage.HasNavigationBar="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label
+            FontFamily="FontAwesome"
+            FontSize="16"
+            Text="{x:Static techiesBank:FAIcons.ChevronLeft}" />
+
+        <Label
+            FontFamily="FontAwesome"
+            FontSize="20"
+            HorizontalOptions="End"
+            Text="{x:Static techiesBank:FAIcons.Cog}"
+            TextColor="Gray"
+            VerticalOptions="Center" />
+
+        <Frame
+            Grid.Row="1"
+            Padding="8"
+            Background="#f2eefc"
+            CornerRadius="20"
+            HasShadow="False">
+            <StackLayout Orientation="Horizontal">
+                <Frame
+                    Padding="15,10"
+                    CornerRadius="15"
+                    HorizontalOptions="FillAndExpand">
+                    <Label
+                        HorizontalOptions="Center"
+                        Text="Income"
+                        TextColor="Black" />
+                </Frame>
+                <Frame
+                    Padding="15,10"
+                    Background="Transparent"
+                    CornerRadius="15"
+                    HasShadow="False"
+                    HorizontalOptions="FillAndExpand">
+                    <Label
+                        HorizontalOptions="Center"
+                        Text="Outcome"
+                        TextColor="Black" />
+                </Frame>
+            </StackLayout>
+        </Frame>
+
+        <Label
+            Grid.Row="2"
+            Margin="0,20,0,0"
+            FontSize="18"
+            HorizontalOptions="Center"
+            Text="Saved This Month"
+            TextColor="#a8a8a8" />
+
+        <Label
+            Grid.Row="3"
+            FontAttributes="Bold"
+            FontSize="24"
+            HorizontalOptions="Center"
+            Text="$ 25,9999.00"
+            TextColor="Black" />
+
+        <microcharts:ChartView
+            Grid.Row="4"
+            Margin="-40,10"
+            Chart="{Binding SavingsChart}"
+            HeightRequest="200"
+            HorizontalOptions="FillAndExpand" />
+
+
+        <Frame
+            Grid.Row="5"
+            Margin="60,0"
+            Background="#451bab"
+            CornerRadius="20"
+            HeightRequest="100"
+            Opacity="0.1"
+            TranslationY="-35"
+            VerticalOptions="Start" />
+
+        <Frame
+            Grid.Row="5"
+            Margin="30,0"
+            Background="#451bab"
+            CornerRadius="20"
+            HeightRequest="100"
+            Opacity="0.1"
+            TranslationY="-25"
+            VerticalOptions="Start" />
+
+        <Frame
+            Grid.Row="5"
+            Margin="15,0"
+            Background="#451bab"
+            CornerRadius="20"
+            HeightRequest="100"
+            Opacity="0.1"
+            TranslationY="-15"
+            VerticalOptions="Start" />
+
+        <Frame
+            Grid.Row="5"
+            Background="#451bab"
+            CornerRadius="20"
+            HeightRequest="100"
+            VerticalOptions="Start">
+            <Grid ColumnDefinitions="Auto,*" RowDefinitions="*,*">
+                <Label
+                    FontSize="16"
+                    Text="Plan for 2020"
+                    TextColor="White"
+                    VerticalOptions="End" />
+                <Label
+                    Grid.Row="1"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="Completed"
+                    TextColor="White"
+                    VerticalOptions="Start" />
+
+                <microcharts:ChartView Grid.RowSpan="2" Grid.Column="1" />
+            </Grid>
+        </Frame>
+
+
+    </Grid>
+</ContentPage>

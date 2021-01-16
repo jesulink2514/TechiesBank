@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TechiesBank.Views.BaseNavBarPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:techiesBank="clr-namespace:TechiesBank;assembly=TechiesBank"
+    xmlns:xaml="http://prismlibrary.com"
+    NavigationPage.HasBackButton="False"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.ControlTemplate>
+        <ControlTemplate>
+            <Grid Padding="20" RowDefinitions="Auto,*">
+                <StackLayout Orientation="Horizontal" Spacing="20">
+                    <Label
+                        FontFamily="FontAwesome"
+                        FontSize="18"
+                        Text="{x:Static techiesBank:FAIcons.ChevronLeft}"
+                        TextColor="Red"
+                        VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{xaml:GoBack}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label
+                        FontSize="18"
+                        Text="{TemplateBinding Title}"
+                        VerticalOptions="Center" />
+                </StackLayout>
+                <ContentPresenter Grid.Row="1" />
+            </Grid>
+        </ControlTemplate>
+    </ContentPage.ControlTemplate>
+</ContentPage>

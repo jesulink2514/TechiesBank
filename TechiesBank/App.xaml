@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<prism:PrismApplication
+    x:Class="TechiesBank.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:techiesBank="clr-namespace:TechiesBank;assembly=TechiesBank">
+    <Application.Resources>
+
+        <!--  Application resource dictionary  -->
+        <ControlTemplate x:Key="CustomNavTemplate">
+            <Grid Padding="20" RowDefinitions="Auto,*">
+                <StackLayout Orientation="Horizontal" Spacing="20">
+                    <Label
+                        FontFamily="FontAwesome"
+                        FontSize="18"
+                        Text="{x:Static techiesBank:FAIcons.ChevronLeft}"
+                        TextColor="Black"
+                        VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{prism:GoBack}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label
+                        FontSize="18"
+                        Text="{Binding Title, Source={TemplateBinding TitleText}}"
+                        VerticalOptions="Center" />
+                </StackLayout>
+                <ContentPresenter Grid.Row="1" />
+            </Grid>
+        </ControlTemplate>
+    </Application.Resources>
+</prism:PrismApplication>

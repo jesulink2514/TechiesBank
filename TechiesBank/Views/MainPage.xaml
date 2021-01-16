@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TechiesBank.Views.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:techiesBank="clr-namespace:TechiesBank;assembly=TechiesBank"
+    Title="{Binding Title}"
+    Background="White"
+    NavigationPage.HasBackButton="False"
+    NavigationPage.HasNavigationBar="False">
+
+    <Grid Margin="20" RowDefinitions="Auto,*">
+        <StackLayout>
+            <Label
+                FontFamily="FontAwesome"
+                FontSize="24"
+                Text="{x:Static techiesBank:FAIcons.Bars}"
+                TextColor="Black">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+        <StackLayout Grid.Row="1" Margin="0,10,0,0">
+            <Label
+                FontAttributes="Bold"
+                FontSize="24"
+                Text="Jesus"
+                TextColor="Black" />
+            <Label
+                FontSize="24"
+                Text="Welcome Back!"
+                TextColor="Black">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{prism:NavigateTo 'SecondOldPage'}" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Image Source="credit_card">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{prism:NavigateTo 'SecondPage'}" />
+                </Image.GestureRecognizers>
+            </Image>
+        </StackLayout>
+    </Grid>
+
+</ContentPage>
